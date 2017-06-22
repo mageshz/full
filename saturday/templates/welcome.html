@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>welcome page</title>
+    <!--<style>-->
+        <!--.tit{-->
+        <!--color:blue;-->
+        <!--}-->
+
+    <!--</style>-->
+</head>
+
+<script>
+
+function fun(){
+    var co=document.cookie;
+    console.log(co);
+    document.cookie="user=;expires=Fri, 01 Jan 1999  00:00:00 UTC";
+    console.log(document.cookie)
+    window.location="login";
+
+}
+</script>
+<body>
+<p style="text-indent:65em;" >{{uname}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="submit" onclick=fun() value="logout" ></p>
+
+<h3>
+    Basic Blog
+</h3>
+<form method="post">
+    <table>
+        <tr>
+            <td>        <label>title</label>    </td>
+
+
+            <td>    <input type="text" name="titlecontent"> </td>
+        </tr>
+        <tr>
+            <td>  <label>content</label>    </td>
+            <td>   <textarea name="content"> </textarea>     </td>
+        </tr><br><br>
+        <tr>
+            <td>
+            <input type="submit" name="submit">
+            </td>
+
+</table>
+
+    {%for i in value %}
+
+    {{i.title}}<br>
+
+    {%endfor%}
+
+<!--{%for i in di%}-->
+<!--{{i.content}}-->
+<!--{%endfor%}-->
+</form>
+</body>
+</html>

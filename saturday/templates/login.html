@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<script>
+        $(document).ready(function(){
+            var u=$("#uname").val();
+            var p=$("#pass").val();
+            var dat={"uname":u,"pas":p};
+            $("#submit").click(function(){
+                $.ajax({
+
+                        type:"POST",
+                        url:"login",
+                        data:dat,
+                        dataType:"json",
+                        success:function(data){
+                            alert(data);
+
+                        }
+                       });
+              });
+        });
+
+</script>
+<body>
+
+<table>
+<tr>
+    <td>login</td>
+    <td><input type="text" name="username" id="uname"></td>
+</tr>
+    <tr>
+    <td>password</td>
+    <td><input type="password" name="password" id="pass"></td>
+    </tr>
+    <tr>
+        <td>
+    <input type="submit" value="submit" id="submit">
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
